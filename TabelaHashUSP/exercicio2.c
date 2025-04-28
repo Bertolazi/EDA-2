@@ -10,7 +10,7 @@ void contabiliza(int *tb, int R, int ch) {
 
 int main() {
     FILE *fp;
-    char *filenames[] = {"1_teste_1_hashTable.txt", "1_teste_2_hashTable.txt", "1_teste_3_hashTable.txt"};
+    char *filenames[] = {"teste10k.txt", "teste100k.txt", "teste1m.txt"};
     int i, ch, max_count = 0, max_ch = 0, distinct_keys = 0;
 
     for (i = 0; i < 3; i++) {
