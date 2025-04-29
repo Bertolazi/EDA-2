@@ -119,6 +119,90 @@ No ch%100 temos os índices: 1 (3 vezes), 2 (2 vezes), 4 (2 vezes), 7 (2 vezes),
 Não Divisibilidade: Um número primo não é divisível por nenhum número inteiro além de 1 e ele mesmo, o que evita a situação em que chch e MM compartilham fatores comuns, resultando em colisões mais frequentes.
 
     -> Algoritmo 3 - hashing com encadeamento:
-A técnica de hashing tem dois ingredientes: 
+A técnica de hashing tem dois ingredientes: uma função de espalhamento e um mecanismo de resolução de colisões. A seção anterior discutiu o primeiro ingrediente, nessa seção vamos falar do segundo. As colisões na tabela de dispersão podem ser resolvidas por meio de listas encadeadas: Todas as chaves que têm um mesmo código hash são armazenados em uma lista encadeada. As células da lista encadeada é igual a do algoritmo 2.
+
+typedef struct reg celula;
+struct reg{
+    int chave, ocorr;
+    celula *prox;
+};
+
+Podemos supor então que os elementos da tabela de dispersão tb[0...M-1] são ponteiros para listas encadeadas: 
+
+celula **tb;
+tb - malloc(M*sizeof(celula *));
+
+Para cada índice h, a lista encadeada tb[h] conterá todas as chaves que têm código hash h. O algoritmo de contagem resultante é conhecido como hashing com encadeamento e pode ser visto como uma combinação dos algoritmos 1 e 2 discutidos acima. O algoritmo inicializa todos os elementos do vetor tb com NULL e repete a seguinte rotina: lê uma chave ch do fluxo de entrada e executa a seguinte função:  
+
+void contabiliza (int ch){
+    int h = hash (ch, M);
+    celula *p = tb[h];
+    while(p != NULL && p->chave != ch)
+        p = p->prox;
+    if(p != NULL){
+        p->ocorr += 1;
+    }else{
+        p = malloc (sizeof(celula));
+        p->chave = ch;
+        p->ocorr = 1;
+        p->prox = tb[h];
+        tb[h] = p;
+    }
+}
+
+. Desempenho: No pior caso, a função de espalhamento da hash leva todas as chaves na mesma posição da tabela de dispersão e portanto todas as chaves ficam na lista encaadeada. Nesse caso, o desempenho não é o melhor que o do algoritmo 2: Cada execução de contabiliza consome tempo proporcional ao número de chaves já lidas no fluxo de entrada. 
+No caso médio, típico de aplicações práticas, o desempenho de contabiliza é muito melhor. Se a função hash espalhar bem as chaves pelo conjunto 0...M-1, todas as listas encadeadas terão aproximadamente o mesmo comrprimento e então podemos esperar que o consumo de tempo do contabiliza seja limitado por algo proporcional a: n/M, onde n é o número de chaves lidas até o momento. Se M for 997, por exemplo, podemos esperar que a dunção seja cerca de 1000 vezes mais rápida que aquela do algoritmo 2. É claro q devemos proucurar escolher um valor de M que seja grande o suficiente para que as M listas sejam curtas (digamos que dezenas de elementos) mas não tão grandes que muitas das listas fiquem vazias. 
+    
+    Exercícios 5: . Resolva o problema da contagem para o fluxo de chaves  17 21 19 4 26 30 37  usando hashing com encadeamento. A tabela de dispersão deve ter tamanho 13 e a função de espalhamento deve ser o resto da divisão da chave por 13.  Faça uma figura do estado final da tabela de dispersão.
+    . Suponha que o comprimento N do fluxo de entrada é aproximadamente 50000.  Escolha um bom valor para o tamanho M da tabela de dispersão.
+    . Testes de desempenho.  Repita os testes sugeridos num dos exercícios acima, desta vez usando uma tabela de dispersão com colisões resolvidas por encadeamento.  Experimente diferentes valores (primos e não-primos) para o tamanho M da tabela de dispersão.  Determine a média e o desvio padrão dos comprimentos das listas encadeadas. 
+    -> Algoritmo 4: hashing com sondagem linear
+Esta seção mostra como resolver colisões na tabela de dispersão: Todas as chaves que colidem são armazenadas na própria tabela. Os elementos da tabela de dispersão tb[0...M-1] são células que têm apenas os campos chaves e ocorr.
+
+typedef struct reg celula;
+struct reg{
+    int chave, ocorr;
+};
+
+celula *tb;
+tb = malloc(M*sizeof(celula));
+
+Durante a contagem, algumas das células da tabela tb estarão vagas enquanto outras estarão ocupadas. As células vagas terão chave igual a -1. Nas células ocupadas, as chaves estarão em 0...R-1 e ocorr será o correspondente de número de ocorrências. SSe uma célula tb[h] está vaga podemos garantir que nenhuma chave na parte já lida do fluxo de entrada tem código hash igual a h. Mas se tb[h] está ocupada, não podemos concluir que o código hash de tb[h].chave é igual a h. 
+
+Cada chave ch do fluxo de entrada será contabilizada da seguinte maneira. Seja h o código hash de ch, se a célula tb[h] estiver vaga ou tiver chave igual a ch, o conteúdo da célula é atualizado. Senão o algoritmo proucura a próxima célula de tb que esteja vaga ou que tenha chave igual a ch. A implementação dessas ideias leva o algoritmo de hashing com sondagem linear. O algoritmo começa começa por inicializar todas as células da tabela tb fazendo chave = -1 e ocorr = 0. Depois repete a seguinte rotina: lê uma chave ch e executa a seguinte função: 
+
+void contabiliza(int ch){
+    int c, sonda, h;
+    h = hash(ch, M);
+    for(sonda = 0; sonda < M; sonda++){
+        c = tb[h].chave;
+        if(c == -1 || c == ch) break; // *
+        h = (h+1)%M;
+    }
+    if(sonda>=M) 
+        exit(EXIT_FAILURE);
+    if(c == -1)
+        tb[h].chave = ch;
+    tb[h].ocorr++;
+}
+
+Essa função faz M tentativas que chamamos de sondagem de encontrar uma célula boa (na linha * do código). A busca fracassa somente se a tabela tb estiver cheia. Nesse caso, a execução da função é abortada. (Teria sido melhor redimensionar a tabela tb e continuar trabalhando). Suponha que por exemplo o tamanho M de disperção é 10 ( um número não primo para ficar mais simples). Suponha também que hash(ch, M) é definido como ch%M. Imaginando o seguinte fluxo de entrada: 333 336 1333 333 7777 446 556 999, então o estado final da tabela de dispersão tb[0...9] será o seguinte: 
+
+chave   ocorr
+  999       1
+   -1       0
+   -1       0
+  333       2
+ 1333       1
+   -1       0
+  336       1
+ 7777       1
+  446       1
+  556       1
+
+. Desempenho: No pior caso, a função de espalhamento hash leva todas as chaves na mesma posição da tabela de dispersão e portanto as chaves ocupam células consecutivas da tabela.  Nesse caso, o desempenho não é melhor que o do algoritmo 2:  cada execução de contabiliza consome tempo proporcional ao número de chaves já lidas do fluxo de entrada. 
+
+ No caso médio, típico de aplicações práticas, o desempenho de contabiliza é muito melhor. Se mais da metade das células da tabela de dispersão estiver vaga (como acontece se usarmos redimensionamento) e a função hash espalhar bem as chaves pelo conjunto 0...M-1, uma execução da função contabiliza não precisará fazer mais que algumas poucas sondagens para encontrar uma célula "boa". Assim, o consumo de tempo de uma execução de contabiliza será praticamente independente do número de chaves já lidas. 
+
 
 */
