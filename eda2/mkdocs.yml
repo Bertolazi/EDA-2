@@ -1,0 +1,46 @@
+site_name: Estrutura de dados 2
+nav:
+  - Home: index.md
+  - Prova 2:
+    - Aula 1: Prova_2/Grafos_1.md
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: pt-BR
+  favicon: assets/logounb_doc.svg
+  logo: assets/logounb_doc.svg
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/globe-light
+        name: Dark mode
+      primary: #0070f3
+      accent: grey
+    - scheme: slate
+      toggle:
+        icon: material/globe-light-outline
+        name: Light mode
+      primary: #0070f3
+      accent: #0070f3
+  extra_css:
+    - css/custom.css
+
+markdown_extensions:
+  - attr_list
+
+extra:
+  assets:
+    - docs/assets
