@@ -33,8 +33,8 @@ graph GRAPHInit(int V){  // Cria o grafo
 
 void GRAPHInsert(Graph G, Edge e){
     int v = e.v, w = e.w;
-    G->adj[v] = NEW(w, G->adj[v]);
+    G->adj[v] = NEW(w, G->adj[v]); // Inserimos no início da lista simplesmente por ser mais barato.
     G->adj[v] = NEW(v, G->adj[w]);
-
+    G->E++;
 }
 ```

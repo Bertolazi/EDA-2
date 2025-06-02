@@ -89,15 +89,14 @@ Graph GRAPHInit(int v){
 <p align="center">Função MATRIZInit (inicializa a matriz de adjacência)</p>
 
 ```C
-int** MATRIZInit(int V) {
+int** MATRIZInit(int linhas, int colunas, int valorInicial) {
     // Aloca memória para a matriz
-    int** matriz = (int**)malloc(V * sizeof(int*));
-    for (int i = 0; i < V; i++) {
-        matriz[i] = (int*)malloc(V * sizeof(int));
-        
-        // Inicializa a linha com zeros
-        for (int j = 0; j < V; j++) {
-            matriz[i][j] = 0;
+    int** matriz = (int*)malloc(linhas * sizeof(int));
+    for (int i = 0; i < linhas; i++) {
+        matriz[i] = (int*)malloc(colunas * sizeof(int));
+        // Inicializa a linha com o valor inicial especificado
+        for (int j = 0; j < colunas; j++) {
+            matriz[i][j] = valorInicial;
         }
     }
     return matriz;
