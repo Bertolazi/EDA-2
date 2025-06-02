@@ -3,7 +3,7 @@ nav:
   - Home: index.md
   - Prova 2:
     - Aula 1: Prova_2/Grafos_1.md
-    - Aula 2: Prova_2/Grafos_2.md
+    - Aula 2: Prova_2/Grafos_2.md 
 
 theme:
   name: material
@@ -21,8 +21,8 @@ theme:
     - content.code.annotation
     - content.code.copy
   language: pt-BR
-  favicon: assets/logounb_doc.svg
-  logo: assets/logounb_doc.svg
+  favicon: 
+  logo: 
   palette:
     - scheme: default
       toggle:
