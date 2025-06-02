@@ -1,0 +1,891 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+      
+      <link rel="icon" href="../../assets/logounb_doc.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Aula 1 - Estrutura de dados 2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="grey">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#grafos" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Estrutura de dados 2" class="md-header__button md-logo" aria-label="Estrutura de dados 2" data-md-component="logo">
+      
+  <img src="../../assets/logounb_doc.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Estrutura de dados 2
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Aula 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="grey"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.1 10c1-1 2.4-1.7 3.9-1.9V2h2v6.1c1.5.2 2.9.9 3.9 1.9zm-1.8 3c-.2.6-.3 1.3-.3 2 0 3.9 3.1 7 7 7s7-3.1 7-7c0-.7-.1-1.4-.3-2z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 8.08V2h-2v6.08c-3.39.49-6 3.39-6 6.92 0 3.87 3.13 7 7 7s7-3.13 7-7c0-3.53-2.61-6.43-6-6.92M12 20c-2.76 0-5-2.24-5-5 0-1.13.39-2.16 1.03-3h7.94c.64.84 1.03 1.87 1.03 3 0 2.76-2.24 5-5 5"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Prova 2
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Estrutura de dados 2" class="md-nav__button md-logo" aria-label="Estrutura de dados 2" data-md-component="logo">
+      
+  <img src="../../assets/logounb_doc.svg" alt="logo">
+
+    </a>
+    Estrutura de dados 2
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prova 2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Prova 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Aula 1
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 1
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipo-abstratdos-de-dados-itens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipo abstratdos de dados: Itens
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-um-grafo" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que é um grafo?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="O que é um grafo?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algumas-regras-e-conceitos-fundamentais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algumas regras e conceitos fundamentais:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matriz-de-adjacencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matriz de adjacência
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Grafos_2.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipo-abstratdos-de-dados-itens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipo abstratdos de dados: Itens
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-um-grafo" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que é um grafo?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="O que é um grafo?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algumas-regras-e-conceitos-fundamentais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algumas regras e conceitos fundamentais:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matriz-de-adjacencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matriz de adjacência
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="grafos">Grafos</h1>
+<h2 id="tipo-abstratdos-de-dados-itens">Tipo abstratdos de dados: Itens</h2>
+<p>Para esse primeiro momento dentro do estudo de grafos não nos interessa muito o que tem dentro desses itens e sim como eles se relacionam com outros itens, então por exemplo em uma lista telefônica, temos itens de uma lista telefônica, dentro desses itens temos o nome da pessoa e o número de telefone dessa pessoa, consideramos que o nome da pessoa é a chave que usamos para fazer a busca dentro das relações que estabelecemos, mas esses dados dentro de uma tabela hash não se relacionam diretamente, agora pensando em grafos pensamos realmente nas relações que os itens tem entre eles, mas tudo bem, quais são essas relações?</p>
+<p> Podemos pensar primeiramente em um mapa, imagine que traçou uma rota da sua faculdade até sua casa, ele vai te gerar uma rota, podemos imaginar que cada interceção de ruas é um nó do nosso grafo e a própria rua é o caminho entre esses nós, e tem relação com os outros nóes pelas ruas. O maps então relcionando com os grafos, ele calcula os nós e define o melhor caminho até chegar no nó de desejo. Outro conjunto de relações que podemos relacionar com grafos são as páginas webs, pensando em um site, que tem acesso a outro, cada um desses hiperlinks é um nó do grafo que nos leva a outro site. Outro exemplo muito legal são circuitos elétricos, com os pontos de conexão sendo nós do nosso grafo, e os fios os caminhos que nos levam aos outros nós. Outro caso legal seria o exemplo de rede de computadores, por exemplo, na RNP (Rede nacional de pesquisa), toda vez no esquema que vemos a sigla de um estado em um roteador temos um ponto de rede para se comunicar com outra faculdade de outro estado, cada um dessas siglas representa um nó de rede nos estado, e a linha que os liga é o caminho de nó a nó, o interessante desse exemplo é que por exemplo imagine que caia uma rota DF para SP, o grafo busca outro caminho sem ser o direto entre esses dois estados, fazendo assim, não dependente de uma única rota.</p>
+
+<h2 id="o-que-e-um-grafo">O que é um grafo?</h2>
+<p>Um conjunto de vértices, e um conjunto de arestas (conectam pares distindos de vértices), os vértices são numerados de 0 a v-1, representamso os grafos com bolinhas ligadas por linhas que conectam os mesmos (Como estamos em um teclado de computador, indicaremos sem as bolinhas). </p>
+
+<div style="text-align: center;">
+    <p>Grafo 1: Exemplo (4 vértices de 0 até 3)</p>
+    <img src="../../assets/grafos/grafo_1.png" alt="Grafo 1">
+    <p>Fonte - Autoral</p>
+</div>
+
+<h3 id="algumas-regras-e-conceitos-fundamentais">Algumas regras e conceitos fundamentais:</h3>
+<ul>
+<li>Não temos uma aresta que sai dela e vai para ela mesma; </li>
+<li>Dois vértices são adjacentes entre eles, se eles se conectam por meio de uma aresta em comum; </li>
+<li>Se uma aresta sai por exemplo do nó 0 para o nó 2, o caminho é de duas vias, ou seja, do 2 eu consigo ir para o 0; </li>
+<li>Essa "via de mão dupla" pode ser interrompida em grafos que chamamos de <strong>grafos dirigidos</strong>, com uma seta no final da aresta temos a indicação de um caminho só de ida entre um nó e outro (veja o grafo 2 abaixo); </li>
+</ul>
+<div style="text-align: center;">
+    <p>Grafo 2: Grafo dirigido</p>
+    <img src="../../assets/grafos/grafo_dirigido.png" alt="Grafo direcionado">
+    <p>Fonte - Autoral</p>
+</div>
+
+<ul>
+<li>Um grafo com V vértices tem no máximo [v.(v-1)]/2 arestas</li>
+<li><strong>Grafo completo:</strong> Todos os vértices se conectam com todos os vértices:</li>
+</ul>
+<div style="text-align: center;">
+    <p>Grafo 3: Grafo completo</p>
+    <img src="../../assets/grafos/grafo_completo.png" alt="Grafo 1">
+    <p>Fonte - Autoral</p>
+</div>
+
+<ul>
+<li><strong>Caminho no grafo:</strong> É uma sequência de vértices em que cada vértice sucessivo é adjacente ao predecessor do caminho, <ul>
+<li>Caminho simples temos vértices e arestas distintas.</li>
+<li>Um ciclo: É um caminho que é simples exceto pelo primeiro e último vértice que são os mesmos, veja a imagem abaixo, mostrando isso.</li>
+</ul>
+</li>
+</ul>
+<div style="text-align: center;">
+    <p>Grafo 4: Grafo cíclico</p>
+    <img src="../../assets/grafos/grafo_ciclico.png" alt="Grafo 1">
+    <p>Fonte - Autoral</p>
+</div>
+
+<ul>
+<li>
+<p>Um grafo é conexo se há um caminho de cada vértice para todo outro vértice no próprio grafo.</p>
+<ul>
+<li>Um grafo conexo exige um caminho para todos os outros vértices enquanto um grafo completo tem que ter uma aresta para todos os outros vértices.</li>
+<li>Um grafo que não é conexo consiste em um conjunto de componentes conexas, que são subgrafos conexos máximos.</li>
+</ul>
+</li>
+<li>
+<p>Um grafo conexo acíclico é também chamado de árvore.</p>
+<ul>
+<li>Um conjunto de árvores é chamado de floresta.</li>
+</ul>
+</li>
+<li>
+<p>Como é a nossa ADT dos grafos?</p>
+</li>
+</ul>
+<pre><code class="language-C">typedef struct {int v; int w;}Edge; // struct responsável por arestas (v e w são os vértices que ela conecta).
+Edge EDGE(int, int); // Chamada de inicialização da função EDGE.
+typedef struct graph *Graph; // strfuct responsável pelos grafos (ainda não definida).
+Graph GRAPHinit(int); // Função de inicialização de um grafo, o int é a quantidade de vértices.
+void GRAPHInsertE(Graph, Edge); // Insere as arestas dentro do grafo.
+void GRAPHRemoveE(Graph, Edge); // Remove uma aresta dentro do grafo.
+int GRAPHEdges(Edge[], Graph G); // Contador de arestas.
+Graph GRAPHCopy(Graph); // Me devolve um grafo, duplicando um grafo.
+void GRAPHDestroy(Graph); // Dar um free corretamente do grafo livrando espaço.
+</code></pre>
+<ul>
+<li>Como é a cara da minha struct graph?<ul>
+<li>Uma matriz de adjacência.<ul>
+<li>Uma matriz onde indicamos quem está conectado com quem.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="matriz-de-adjacencia">Matriz de adjacência</h3>
+<p align="center">Struct graph e a função GRAPHInit (inicia o grafo com os vértices)</p>
+
+<pre><code class="language-C">struct graph{int V, int E; int **adj;} // int V = num_vertices, int E = num_aretas, int **adj = matriz_de_adjagencia inicializada
+Graph GRAPHInit(int v){
+    Graph G = malloc(sizeof(*G));
+    G-&gt;V; // Recebe os vértices colocados
+    G-&gt;E = 0; //Ainda sem arestas
+    G-&gt;adj = MATRIZInit(V,V, 0); // Inicializa a matriz de adjacência com 0's
+    return G;
+}
+
+</code></pre>
+<p><br></p>
+<p align="center">Função MATRIZInit (inicializa a matriz de adjacência)</p>
+
+<pre><code class="language-C">int** MATRIZInit(int V) {
+    // Aloca memória para a matriz
+    int** matriz = (int**)malloc(V * sizeof(int*));
+    for (int i = 0; i &lt; V; i++) {
+        matriz[i] = (int*)malloc(V * sizeof(int));
+
+        // Inicializa a linha com zeros
+        for (int j = 0; j &lt; V; j++) {
+            matriz[i][j] = 0;
+        }
+    }
+    return matriz;
+}
+</code></pre>
+<p align="center">Função GRAPHInsertE (Insere uma aresta no grafo)</p>
+
+<pre><code class="language-C">void GRPAHInsertE(Graph G, Edge e){ // Custo O(1)
+    int v = e.v, w = e.w; // e = struct e v e w os vértices que ela vai atingir
+    if(G-&gt;adj[v][w] == 0)
+        G-&gt;E++;
+    G-&gt;adj[v][w] = 1;
+    G-&gt;adj[w][v] = 1; // Se não for um grafo dirigido ambas atribuições são verdade
+}
+</code></pre>
+<p align="center">Função GRAPHRemoveE (Remove uma aresta no grafo)</p>
+
+<pre><code class="language-C">void GRAPHRemoveE(Graph G, Edge e){ // Custo O(1)
+    int v = e.v, w = e.w;
+    if(G-&gt;adj[v][w] == 1)
+        G-&gt;E--;
+    G-&gt;adj[v][w] = 0;
+    G-&gt;adj[w][v] = 0; 
+}
+</code></pre>
+<p align="center">Função GRAPHEdges (Contador de aresta no grafo)</p>
+
+<pre><code class="language-C">int GRAPHEdges(Edge a[], Graph G){ 
+    int v, w, E = 0;
+    for(v = 0; v &lt; G-&gt;v; v++)
+        for(w =v+1; w &lt; G-&gt;w; w++) // Por não ser um grafo dirigido não precisamos olhar os vértices menores do que estamos analizando
+            if(G-&gt;adj[v][w] = 1)
+                a[E++] = EDGE(v,w);
+    return E;
+}
+</code></pre>
+<ul>
+<li>Quando um vértice se liga a outro, colocamos na matriz de adjacência o número 1, caso contrário deixamos com 0.</li>
+<li>Se não for dirigido colocamos de 0 para 5 e de 5 para 0 por exemplo para indicar que podemos fazer o caminho inverso.</li>
+</ul>
+<p align="center">Exemplo te matriz adjacente do grafo</p>
+<table>
+    <tr>
+        <th></th>
+        <th>0</th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+    </tr>
+    <tr>
+        <th>0</th>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>1</td>
+        <td></td>
+        <td>1</td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>1</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td></td>
+        <td>1</td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>2</th>
+        <td>1</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>3</th>
+        <td>1</td>
+        <td>1</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>4</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>5</th>
+        <td>1</td>
+        <td>1</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+        <tr>
+        <th>6</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<ul>
+<li>Além das matrizes de adjacências podemos armazenar também nas listas de adjacências</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Anterior: Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

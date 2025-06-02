@@ -3,6 +3,7 @@ nav:
   - Home: index.md
   - Prova 2:
     - Aula 1: Prova_2/Grafos_1.md
+    - Aula 2: Prova_2/Grafos_2.md
 
 theme:
   name: material
