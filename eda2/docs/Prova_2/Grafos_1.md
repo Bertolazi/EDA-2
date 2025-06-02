@@ -7,7 +7,7 @@
 
 ## O que é um grafo? 
 
-<p> Um conjunto de vértices, e um conjunto de arestas (conectam pares distindos de vértices), os vértices são numerados de 0 a v-1, representamso os grafos com bolinhas ligadas por linhas que conectam os mesmos (Como estamos em um teclado de computador, indicaremos sem as bolinhas). </p> 
+<p>Um conjunto de vértices, e um conjunto de arestas (conectam pares distindos de vértices), os vértices são numerados de 0 a v-1, representamso os grafos com bolinhas ligadas por linhas que conectam os mesmos (Como estamos em um teclado de computador, indicaremos sem as bolinhas). </p> 
 
 <div style="text-align: center;">
     <p>Grafo 1: Exemplo (4 vértices de 0 até 3)</p>
@@ -15,9 +15,10 @@
     <p>Fonte - Autoral</p>
 </div>
 
-### Algumas regras fundamentais: 
+### Algumas regras e conceitos fundamentais: 
 
 - Não temos uma aresta que sai dela e vai para ela mesma; 
+- Dois vértices são adjacentes entre eles, se eles se conectam por meio de uma aresta em comum; 
 - Se uma aresta sai por exemplo do nó 0 para o nó 2, o caminho é de duas vias, ou seja, do 2 eu consigo ir para o 0; 
 - Essa "via de mão dupla" pode ser interrompida em grafos que chamamos de **grafos dirigidos**, com uma seta no final da aresta temos a indicação de um caminho só de ida entre um nó e outro (veja o grafo 2 abaixo); 
 
@@ -27,8 +28,7 @@
     <p>Fonte - Autoral</p>
 </div>
 
-### Tipos de grafos: 
-
+- Um grafo com V vértices tem no máximo [v.(v-1)]/2 arestas
 - **Grafo completo:** Todos os vértices se conectam com todos os vértices:
 
 <div style="text-align: center;">
@@ -37,4 +37,195 @@
     <p>Fonte - Autoral</p>
 </div>
 
-  
+- **Caminho no grafo:** É uma sequência de vértices em que cada vértice sucessivo é adjacente ao predecessor do caminho, 
+    - Caminho simples temos vértices e arestas distintas.
+    - Um ciclo: É um caminho que é simples exceto pelo primeiro e último vértice que são os mesmos, veja a imagem abaixo, mostrando isso.
+
+<div style="text-align: center;">
+    <p>Grafo 4: Grafo cíclico</p>
+    <img src="../../assets/grafos/grafo_ciclico.png" alt="Grafo 1">
+    <p>Fonte - Autoral</p>
+</div>
+
+- Um grafo é conexo se há um caminho de cada vértice para todo outro vértice no próprio grafo.
+    - Um grafo conexo exige um caminho para todos os outros vértices enquanto um grafo completo tem que ter uma aresta para todos os outros vértices.
+    - Um grafo que não é conexo consiste em um conjunto de componentes conexas, que são subgrafos conexos máximos.
+
+- Um grafo conexo acíclico é também chamado de árvore.
+    - Um conjunto de árvores é chamado de floresta.
+
+- Como é a nossa ADT dos grafos?
+
+```C
+typedef struct {int v; int w;}Edge; // struct responsável por arestas (v e w são os vértices que ela conecta).
+Edge EDGE(int, int); // Chamada de inicialização da função EDGE.
+typedef struct graph *Graph; // strfuct responsável pelos grafos (ainda não definida).
+Graph GRAPHinit(int); // Função de inicialização de um grafo, o int é a quantidade de vértices.
+void GRAPHInsertE(Graph, Edge); // Insere as arestas dentro do grafo.
+void GRAPHRemoveE(Graph, Edge); // Remove uma aresta dentro do grafo.
+int GRAPHEdges(Edge[], Graph G); // Contador de arestas.
+Graph GRAPHCopy(Graph); // Me devolve um grafo, duplicando um grafo.
+void GRAPHDestroy(Graph); // Dar um free corretamente do grafo livrando espaço.
+```
+
+- Como é a cara da minha struct graph?
+    - Uma matriz de adjacência.
+        - Uma matriz onde indicamos quem está conectado com quem.
+### Matriz de adjacência
+<p align="center">Struct graph e a função GRAPHInit (inicia o grafo com os vértices)</p>
+
+```C
+struct graph{int V, int E; int **adj;} // int V = num_vertices, int E = num_aretas, int **adj = matriz_de_adjagencia inicializada
+Graph GRAPHInit(int v){
+    Graph G = malloc(sizeof(*G));
+    G->V; // Recebe os vértices colocados
+    G->E = 0; //Ainda sem arestas
+    G->adj = MATRIZInit(V,V, 0); // Inicializa a matriz de adjacência com 0's
+    return G;
+}
+
+```
+<br>
+<p align="center">Função MATRIZInit (inicializa a matriz de adjacência)</p>
+
+```C
+int** MATRIZInit(int V) {
+    // Aloca memória para a matriz
+    int** matriz = (int**)malloc(V * sizeof(int*));
+    for (int i = 0; i < V; i++) {
+        matriz[i] = (int*)malloc(V * sizeof(int));
+        
+        // Inicializa a linha com zeros
+        for (int j = 0; j < V; j++) {
+            matriz[i][j] = 0;
+        }
+    }
+    return matriz;
+}
+```
+
+<p align="center">Função GRAPHInsertE (Insere uma aresta no grafo)</p>
+
+```C
+void GRPAHInsertE(Graph G, Edge e){ // Custo O(1)
+    int v = e.v, w = e.w; // e = struct e v e w os vértices que ela vai atingir
+    if(G->adj[v][w] == 0)
+        G->E++;
+    G->adj[v][w] = 1;
+    G->adj[w][v] = 1; // Se não for um grafo dirigido ambas atribuições são verdade
+}
+```
+
+<p align="center">Função GRAPHRemoveE (Remove uma aresta no grafo)</p>
+
+```C
+void GRAPHRemoveE(Graph G, Edge e){ // Custo O(1)
+    int v = e.v, w = e.w;
+    if(G->adj[v][w] == 1)
+        G->E--;
+    G->adj[v][w] = 0;
+    G->adj[w][v] = 0; 
+}
+```
+
+<p align="center">Função GRAPHEdges (Contador de aresta no grafo)</p>
+
+```C
+int GRAPHEdges(Edge a[], Graph G){ 
+    int v, w, E = 0;
+    for(v = 0; v < G->v; v++)
+        for(w =v+1; w < G->w; w++) // Por não ser um grafo dirigido não precisamos olhar os vértices menores do que estamos analizando
+            if(G->adj[v][w] = 1)
+                a[E++] = EDGE(v,w);
+    return E;
+}
+```
+
+- Quando um vértice se liga a outro, colocamos na matriz de adjacência o número 1, caso contrário deixamos com 0.
+- Se não for dirigido colocamos de 0 para 5 e de 5 para 0 por exemplo para indicar que podemos fazer o caminho inverso.
+
+<p align="center">Exemplo te matriz adjacente do grafo</p>
+<table>
+    <tr>
+        <th></th>
+        <th>0</th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+    </tr>
+    <tr>
+        <th>0</th>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>1</td>
+        <td></td>
+        <td>1</td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>1</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td></td>
+        <td>1</td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>2</th>
+        <td>1</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>3</th>
+        <td>1</td>
+        <td>1</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>4</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>5</th>
+        <td>1</td>
+        <td>1</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+        <tr>
+        <th>6</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+ 
+- Além das matrizes de adjacências podemos armazenar também nas listas de adjacências
