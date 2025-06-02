@@ -78,7 +78,7 @@ void GRAPHDestroy(Graph); // Dar um free corretamente do grafo livrando espaço.
 struct graph{int V, int E; int **adj;} // int V = num_vertices, int E = num_aretas, int **adj = matriz_de_adjagencia inicializada
 Graph GRAPHInit(int v){
     Graph G = malloc(sizeof(*G));
-    G->V; // Recebe os vértices colocados
+    G->V = v; // Recebe os vértices colocados
     G->E = 0; //Ainda sem arestas
     G->adj = MATRIZInit(V,V, 0); // Inicializa a matriz de adjacência com 0's
     return G;
