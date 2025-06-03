@@ -24,7 +24,7 @@
 
 <div style="text-align: center;">
     <p>Grafo 2: Grafo dirigido</p>
-    <img src="../../assets/grafos/grafo_dirigido.png" alt="Grafo direcionado">
+    <img src="../../assets/grafos/grafo_dirigido.png" alt="Grafo 2">
     <p>Fonte - Autoral</p>
 </div>
 
@@ -33,7 +33,7 @@
 
 <div style="text-align: center;">
     <p>Grafo 3: Grafo completo</p>
-    <img src="../../assets/grafos/grafo_completo.png" alt="Grafo 1">
+    <img src="../../assets/grafos/grafo_completo.png" alt="Grafo 3">
     <p>Fonte - Autoral</p>
 </div>
 
@@ -43,7 +43,7 @@
 
 <div style="text-align: center;">
     <p>Grafo 4: Grafo cíclico</p>
-    <img src="../../assets/grafos/grafo_ciclico.png" alt="Grafo 1">
+    <img src="../../assets/grafos/grafo_ciclico.png" alt="Grafo 4">
     <p>Fonte - Autoral</p>
 </div>
 

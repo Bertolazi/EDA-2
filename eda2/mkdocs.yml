@@ -4,6 +4,8 @@ nav:
   - Prova 2:
     - Aula 1: Prova_2/Grafos_1.md
     - Aula 2: Prova_2/Grafos_2.md 
+    - Aula 3: Prova_2/Grafos_3.md
+    - Aula 4: Prova_2/Grafos_4.md
 
 theme:
   name: material

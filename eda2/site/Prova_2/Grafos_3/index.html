@@ -9,23 +9,25 @@
       
       
       
+        <link rel="prev" href="../Grafos_2/">
       
-        <link rel="next" href="Prova_2/Grafos_1/">
+      
+        <link rel="next" href="../Grafos_4/">
       
       
-      <link rel="icon" href="None">
+      <link rel="icon" href="../../None">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Estrutura de dados 2</title>
+        <title>Aula 3 - Estrutura de dados 2</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -70,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sobre-o-curso" class="md-skip">
+        <a href="#grafos" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -86,7 +88,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
-    <a href="." title="Estrutura de dados 2" class="md-header__button md-logo" aria-label="Estrutura de dados 2" data-md-component="logo">
+    <a href="../.." title="Estrutura de dados 2" class="md-header__button md-logo" aria-label="Estrutura de dados 2" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -106,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Aula 3
             
           </span>
         </div>
@@ -199,11 +201,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -220,11 +220,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="Prova_2/Grafos_1/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Grafos_1/" class="md-tabs__link">
           
   
   
@@ -264,7 +266,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Estrutura de dados 2" class="md-nav__button md-logo" aria-label="Estrutura de dados 2" data-md-component="logo">
+    <a href="../.." title="Estrutura de dados 2" class="md-nav__button md-logo" aria-label="Estrutura de dados 2" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -279,19 +281,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -302,7 +295,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -311,24 +303,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -341,7 +338,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Prova 2
@@ -355,7 +352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Prova_2/Grafos_1/" class="md-nav__link">
+      <a href="../Grafos_1/" class="md-nav__link">
         
   
   
@@ -378,7 +375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Prova_2/Grafos_2/" class="md-nav__link">
+      <a href="../Grafos_2/" class="md-nav__link">
         
   
   
@@ -398,10 +395,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="Prova_2/Grafos_3/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Aula 3
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -412,6 +431,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#resumo-de-grafos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumo de grafos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentes-conexas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Componentes conexas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execucao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execução
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -424,7 +490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Prova_2/Grafos_4/" class="md-nav__link">
+      <a href="../Grafos_4/" class="md-nav__link">
         
   
   
@@ -467,6 +533,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#resumo-de-grafos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumo de grafos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentes-conexas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Componentes conexas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execucao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execução
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -481,15 +582,58 @@
 
 
 
-<h1 id="sobre-o-curso">Sobre o curso</h1>
-<p>Curso de Estruturas de dados 2 da FCTE, ministrado pelo professor Bruno César Ribas.</p>
-<h1 id="aluno">Aluno</h1>
-<p><strong>Aluno de engenharia de software</strong> da faculdade do Gama (FCTE), foi <strong>líder de telemetria</strong> na Fórmula Gama Racing onde foi responsável por integrar e operar o painel do carro, assegurando comunicação eficaz com sensores e sistemas internose, e foi <strong>aluno pesquisador</strong>, onde participou de projeto de pesquisa sobre simulação de veículo híbrido flex, utilizando Unreal e Microautobox, integrando MATLAB e Simulink para comunicação eficaz dos sistemas.</p>
-<div align="center">
-<table align="center">
-    <td align="center"><a href="https://github.com/Bertolazi"><img src="https://github.com/Bertolazi.png" width="200px;" alt=""/><br /><sub><b>Gabriel Basto</b></sub></a><br />
-</table>
+<h1 id="grafos">Grafos</h1>
+<h2 id="resumo-de-grafos">Resumo de grafos</h2>
+<p>O importante é definir a relação entre os nós, então temos um conjunto de vértices que têm relação com outro conjunto de vértices, tudo o que implementamos é para fazer perguntas de como essas relações se comportam ou se relacionam, essa conexão se da por meio de arestas. Por mais que a estrutura gráfica dos grafos seja simples com as bolinhas representando os vértices, e as linhas representando as arestas, quando tratamos essa estrutura na análise de dados essa estrutura já não é mais tão simples quanto aparenta ser.</p>
+<p>Podemos representar o grafo de duas formas:</p>
+
+<ul>
+<li>Matriz de adjacência: Número 1 quando tem relação e 0 quando não tem relação;</li>
+<li>Lista de adjacência: Colocamos no índice do vetor um link para os outros vértices com que eles estão ligados pela arestas;</li>
+</ul>
+<h2 id="componentes-conexas">Componentes conexas</h2>
+<p>Como podemos identificar as componentes conexas usando busca em profundidade? Bem, para isso vamos pegar como exemplo o grafo abaixo já msotrado na aula passada, veja abaixo:</p>
+
+<div style="text-align: center;">
+    <p>Grafo 5: Grafo exemplo</p>
+    <img src="../../assets/grafos/grafo_ex_aula_2.png" alt="Grafo 5">
+    <p>Fonte - Autoral</p>
 </div>
+
+<p>Como podemos ver no grafo acima temos duas componentes conexas: Todo grupo unido com o 0 de um lado, e do outro o 9 junto do 8. Como podemos fazer isso? Bom mas antes de fazer isso vamos fazer uma função genérica para fazer uma busca geral no gráfico, contando quantos vértices eu visitei</p>
+
+<p align="center">Função GRAPHSearch para matriz de adjacências</p>
+
+<pre><code class="language-C">static int count, pre[maxV];
+void GRAPHSearch(Graph G){  // Com esse algoritmo o sistema computa a saída da componente conexa e vai para a próxima
+    int v; // Vértices que vou visitar
+    int conexos = 0;
+    count = 0;
+    for(v = 0; G-&gt;V; v++)
+        pre[v]=-1;
+    for(v = 0; G-&gt;V; v++){ // Executa todos de 0 a 7, na segunda interação ele faz a interação de 8 e 9
+        if(pre[v] == -1){ // Se for != de -1 ele nem entra na DSF
+            dsfR(G, EDGE(v, v));
+            conexos++;
+        }
+    }
+}
+</code></pre>
+<p align="center">Função GRAPHSearch para lista de adjacências</p>
+
+<pre><code class="language-C">void dfsR(Graph G, Edge e){
+    int t, w = e.w;
+    link l;
+    pre[w] = count++;
+    for(l=G-&gt;adj[w]; l != NULL; l = l-&gt;next){
+        t = l-&gt;v;
+        if(pre[t] == -1)    
+            dfsR(G, EDGE(w, t));
+    }
+}
+</code></pre>
+<h2 id="execucao">Execução</h2>
+<p>Feita no caderno.</p>
 
 
 
@@ -526,15 +670,31 @@
       
       <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
         
+          
+          <a href="../Grafos_2/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Aula 2">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Aula 2
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="Prova_2/Grafos_1/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Aula 1">
+          <a href="../Grafos_4/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Aula 4">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Próximo
               </span>
               <div class="md-ellipsis">
-                Aula 1
+                Aula 4
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -570,10 +730,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>
