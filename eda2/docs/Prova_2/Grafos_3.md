@@ -21,6 +21,7 @@
 <p>Como podemos ver no grafo acima temos duas componentes conexas: Todo grupo unido com o 0 de um lado, e do outro o 9 junto do 8. Como podemos fazer isso? Bom mas antes de fazer isso vamos fazer uma função genérica para fazer uma busca geral no gráfico, contando quantos vértices eu visitei</p>
 
 <p align="center">Função GRAPHSearch para matriz de adjacências</p>
+
 ```C
 static int count, pre[maxV];
 void GRAPHSearch(Graph G){  // Com esse algoritmo o sistema computa a saída da componente conexa e vai para a próxima
@@ -56,3 +57,4 @@ void dfsR(Graph G, Edge e){
 ## Execução
 
 Feita no caderno.
+Fazer novamente para a prova 3.
