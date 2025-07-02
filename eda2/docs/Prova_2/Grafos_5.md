@@ -2,7 +2,7 @@
 
 ## Grafos dirigido
 
-- A ideia dos grafos dirigidos é que agora as arestas dos grafos agora possuem direções, diferente de alguns de nossos grafos mostrados anteriormente onde dentro das matriz de adjacências ou da lista de adjacências sempre que A apontava para B, ou vet[A][B] é verdade, o nosso B apontava apara Ae vet[B][A] também era verdade. No caso do grafo dirigido temos uma via de mão única onde se A aponta para B, B não aponta para A por regra.
+- A ideia dos grafos dirigidos é que agora as arestas dos grafos agora possuem direções, diferente de alguns de nossos grafos mostrados anteriormente onde dentro das matriz de adjacências ou da lista de adjacências sempre que A apontava para B, ou vet[A][B] é verdade, o nosso B apontava para A e vet[B][A] também era verdade. No caso do grafo dirigido temos uma via de mão única onde se A aponta para B, B não aponta para A por regra.
 
 <div style="text-align: center;">
     <p>Grafo 5: Grafo dirigido exemplo</p>

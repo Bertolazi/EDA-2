@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../Grafos_2/">
+        <link rel="prev" href="../Grafos_4/">
       
-      
-        <link rel="next" href="../Grafos_4/">
       
       
       <link rel="icon" href="../../None">
@@ -20,7 +18,7 @@
     
     
       
-        <title>Aula 3 - Estrutura de dados 2</title>
+        <title>Aula 5 - Estrutura de dados 2</title>
       
     
     
@@ -108,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Aula 3
+              Aula 5
             
           </span>
         </div>
@@ -395,32 +393,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Aula 3
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Grafos_3/" class="md-nav__link">
         
   
   
@@ -431,53 +407,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Índice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#resumo-de-grafos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resumo de grafos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#componentes-conexas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Componentes conexas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execucao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Execução
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -510,10 +439,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Grafos_5/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Aula 5
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -524,6 +475,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#grafos-dirigido" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grafos dirigido
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -563,27 +543,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#resumo-de-grafos" class="md-nav__link">
+  <a href="#grafos-dirigido" class="md-nav__link">
     <span class="md-ellipsis">
-      Resumo de grafos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#componentes-conexas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Componentes conexas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execucao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Execução
+      Grafos dirigido
     </span>
   </a>
   
@@ -606,58 +568,45 @@
 
 
 <h1 id="grafos">Grafos</h1>
-<h2 id="resumo-de-grafos">Resumo de grafos</h2>
-<p>O importante é definir a relação entre os nós, então temos um conjunto de vértices que têm relação com outro conjunto de vértices, tudo o que implementamos é para fazer perguntas de como essas relações se comportam ou se relacionam, essa conexão se da por meio de arestas. Por mais que a estrutura gráfica dos grafos seja simples com as bolinhas representando os vértices, e as linhas representando as arestas, quando tratamos essa estrutura na análise de dados essa estrutura já não é mais tão simples quanto aparenta ser.</p>
-<p>Podemos representar o grafo de duas formas:</p>
-
+<h2 id="grafos-dirigido">Grafos dirigido</h2>
 <ul>
-<li>Matriz de adjacência: Número 1 quando tem relação e 0 quando não tem relação;</li>
-<li>Lista de adjacência: Colocamos no índice do vetor um link para os outros vértices com que eles estão ligados pela arestas;</li>
+<li>A ideia dos grafos dirigidos é que agora as arestas dos grafos agora possuem direções, diferente de alguns de nossos grafos mostrados anteriormente onde dentro das matriz de adjacências ou da lista de adjacências sempre que A apontava para B, ou vet[A][B] é verdade, o nosso B apontava apara Ae vet[B][A] também era verdade. No caso do grafo dirigido temos uma via de mão única onde se A aponta para B, B não aponta para A por regra.</li>
 </ul>
-<h2 id="componentes-conexas">Componentes conexas</h2>
-<p>Como podemos identificar as componentes conexas usando busca em profundidade? Bem, para isso vamos pegar como exemplo o grafo abaixo já msotrado na aula passada, veja abaixo:</p>
-
 <div style="text-align: center;">
-    <p>Grafo 5: Grafo exemplo</p>
-    <img src="../../assets/grafos/grafo_ex_aula_2.png" alt="Grafo 5">
+    <p>Grafo 5: Grafo dirigido exemplo</p>
+    <img src="../../assets/grafos/grafo_dirigido_ex.png" alt="Grafo 6">
     <p>Fonte - Autoral</p>
 </div>
 
-<p>Como podemos ver no grafo acima temos duas componentes conexas: Todo grupo unido com o 0 de um lado, e do outro o 9 junto do 8. Como podemos fazer isso? Bom mas antes de fazer isso vamos fazer uma função genérica para fazer uma busca geral no gráfico, contando quantos vértices eu visitei</p>
+<ul>
+<li>
+<p>A relação deles na lista de adjacência é igual no outro grafo mas sem a regra de se A-&gt;B, B-&gt;A também.</p>
+</li>
+<li>
+<p>O máximo de arestas é 2*V.</p>
+</li>
+<li>
+<p>Grafo dirigido (ou dígrafo): É um conjunto de vértices e um conjunto de arestas dirigidos que conectam um par de vértices (Sem arestas duplicadas). Dizemos que essa aresta vai de um primeiro vértice para o segundo vértice.</p>
+</li>
+<li>
+<p>Edge{int v, int w}, v é o primeiroe w é o segundo.</p>
+</li>
+<li>
+<p>Caminho dirigido: Em um grafo dirigido a lista de vértices no qual existe uma resta derigida conectando cada vértice da lista a seu sucessor. Dizemos de um vértice t é alcançável de um vértice s se existe um caminho dirigido de s a t.</p>
+</li>
+<li>
+<p>Quantidade de arestas em um grafo não dirigido é V^2, já em um grafo dirigido temos 2^(V^2)</p>
+</li>
+</ul>
+<p align="center">Como inverter as arestas de um grafo dirigido?></p>
 
-<p align="center">Função GRAPHSearch para matriz de adjacências</p>
-
-<pre><code class="language-C">static int count, pre[maxV];
-void GRAPHSearch(Graph G){  // Com esse algoritmo o sistema computa a saída da componente conexa e vai para a próxima
-    int v; // Vértices que vou visitar
-    int conexos = 0;
-    count = 0;
-    for(v = 0; G-&gt;V; v++)
-        pre[v]=-1;
-    for(v = 0; G-&gt;V; v++){ // Executa todos de 0 a 7, na segunda interação ele faz a interação de 8 e 9
-        if(pre[v] == -1){ // Se for != de -1 ele nem entra na DSF
-            dsfR(G, EDGE(v, v));
-            conexos++;
-        }
-    }
+<pre><code class="language-C">Graph GRAPHReverse(Graph G){
+    int v, int t;
+    Graph R = GRAPHInit(G-&gt;v);
+    for (v=0; v &lt; G-&gt;V; v++)
+        for(t=g-&gt;adj[v]; t != NULL; t++)
 }
 </code></pre>
-<p align="center">Função GRAPHSearch para lista de adjacências</p>
-
-<pre><code class="language-C">void dfsR(Graph G, Edge e){
-    int t, w = e.w;
-    link l;
-    pre[w] = count++;
-    for(l=G-&gt;adj[w]; l != NULL; l = l-&gt;next){
-        t = l-&gt;v;
-        if(pre[t] == -1)    
-            dfsR(G, EDGE(w, t));
-    }
-}
-</code></pre>
-<h2 id="execucao">Execução</h2>
-<p>Feita no caderno.
-Fazer novamente para a prova 3.</p>
 
 
 
@@ -695,7 +644,7 @@ Fazer novamente para a prova 3.</p>
       <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
         
           
-          <a href="../Grafos_2/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Aula 2">
+          <a href="../Grafos_4/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Aula 4">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -705,27 +654,11 @@ Fazer novamente para a prova 3.</p>
                 Anterior
               </span>
               <div class="md-ellipsis">
-                Aula 2
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../Grafos_4/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Aula 4">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Próximo
-              </span>
-              <div class="md-ellipsis">
                 Aula 4
               </div>
             </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
           </a>
+        
         
       </nav>
     
