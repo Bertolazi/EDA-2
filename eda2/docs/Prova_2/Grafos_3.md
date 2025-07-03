@@ -56,5 +56,4 @@ void dfsR(Graph G, Edge e){
 
 ## Execução
 
-Feita no caderno.
-Fazer novamente para a prova 3.
+

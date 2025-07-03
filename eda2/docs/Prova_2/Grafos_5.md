@@ -48,5 +48,83 @@ Graph GRAPHReverse(Graph G){
 <p align="center">Como inverter as arestas de um grafo dirigido com matriz de adjacêcias?></p>
 
 ```C
-
+Graph GRAPHReverse(Graph G) {
+    int i, j;
+    Graph R = GRAPHInit(G->V); // Cria grafo com mesma quantidade de vértices
+    for (i = 0; i < G->V; i++) {
+        for (j = 0; j < G->V; j++) {
+            if (G->adj[i][j] == 1) { // Existe uma aresta de i para j
+                R->adj[j][i] = 1;   // No grafo reverso, vai de j para i
+            }
+        }
+    }
+    return R;
+}
 ```
+
+## DAG
+
+- Grafo dirigido acíclico (DAG - Directed aciclic graph): Grafo dirigido que não possiu ciclos (Árvores). 
+    - Quando eu digo que temos um DAG quero dizer que um vértice não volta para um vértice que está acima na ordem topológica. Veja o exemplo abaixo:
+
+<div style="text-align: center;">
+    <p>Grafo 6: Grafo dirigido acíclico</p>
+    <img src="../../assets/grafos/grafo_dirigido_aciclico.png" alt="Grafo 6">
+    <p>Fonte - Autoral</p>
+</div>
+
+## Grafo dirigido fortemente conexo
+
+- Grafo dirigido fortemente conexo: Acontece se todos os vértices são alcançáveis a partir de todos os vérices. 
+
+<div style="text-align: center;">
+    <p>Grafo 7: Grafo dirigido fortemente conexo</p>
+    <img src="../../assets/grafos/grafo_dirigido_fortemente_conexo.png" alt="Grafo 7">
+    <p>Fonte - Autoral</p>
+</div>
+
+## Alcançabilidade e fecho transitivo
+
+- Fecho transitivo de um grafo dirigido é um grafo dirigido com um mesmo conjunto de vértices, mas com uma aresta de s a t no fecho transitico, se e somente se existe um caminho dirigido de s a t no grafo dirigido
+
+<div style="text-align: center;">
+    <p>Grafo 8: Grafo dirigido exemplo pára fexho transitivo</p>
+    <img src="../../assets/grafos/grafo_exemplo_fecho_transitivo.png" alt="Grafo 7">
+    <p>Fonte - Autoral</p>
+</div>
+
+O fecho transitivo desse grafo segue abaixo:
+
+<div style="text-align: center;">
+    <p>Imagem 5: Exemplo de fecho transitivo</p>
+    <img src="../../assets/grafos/fecho_transitivo_exemplo.png" alt="Grafo 7">
+    <p>Fonte - Autoral</p>
+</div>
+
+Resumindo então o fecho transitivo seria um grafo que não conecta somente aos adjacentes apontados, mas também faça uma conexão direta entre o ponto de onde ele sai e o vértice que ele aponta leva ele, ou seja se A->B e B->C, colocamos que o vértice A->B, A->C e B->C.
+
+### Algoritmo Floyd Warshal
+
+- Complexidade alta: Tende a n³, mas resolve todos os fechos transitivos de uma vez só.
+
+<p align="center">Algoritmo Floyd Warshal para matriz de ajacências GRAPHtc</p>
+
+```C
+void GRAPHtc(GRAPH G){
+    int i, s, t;
+    G->tc = MATRIZint(G->V, G->V, 0); // Teve que ser modificado na estrutura grafo, somente adicionar um ponteiro de ponteiro chamado tc
+    for(s = 0; s < G->V; s++)
+        for(t = 0; t < G->V; t++)
+            G->tc[s][t] = G->adj[s][t]; // Isso para cima é para percorrer os vértices para copiar as conexões que já temos no grafo
+    for(s = 0; s < G->V; s++)
+        G->tc[s][s] = 1; // Indicando que ele alcança ele mesmo
+    for(i = 0;. i < G->V; i++)
+        for(s = 0; s < G->V; s++)
+            if(G->tc[s][i] == 1)
+                for(t = 0; t < G->V; t++)
+                    if(G->tc[i][t] == 1)
+                        G->tc[s][t] = 1;
+}
+```
+
+<p align="center"></p>
