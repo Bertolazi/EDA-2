@@ -9,7 +9,7 @@
 
 ```C
 typedef struct node *link
-struct node {int v; link next;};
+struct node {int v; link next;}; // Struct das arestas
 struct graph{int V; int E; link *adj;};
 link NEW(int v; link next){
     link x = malloc(sizeof *x);  // Cria a aresta
