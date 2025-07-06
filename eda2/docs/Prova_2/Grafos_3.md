@@ -20,7 +20,7 @@
 
 <p>Como podemos ver no grafo acima temos duas componentes conexas: Todo grupo unido com o 0 de um lado, e do outro o 9 junto do 8. Como podemos fazer isso? Bom mas antes de fazer isso vamos fazer uma função genérica para fazer uma busca geral no gráfico, contando quantos vértices eu visitei</p>
 
-<p align="center">Função GRAPHSearch para matriz de adjacências</p>
+<p align="center">Função GRAPHSearch para lista de adjacências</p>
 
 ```C
 static int count, pre[maxV];
@@ -39,7 +39,7 @@ void GRAPHSearch(Graph G){  // Com esse algoritmo o sistema computa a saída da 
 }
 ```
 
-<p align="center">Função GRAPHSearch para lista de adjacências</p>
+<p align="center">dfsR para lista de ajacência</p>
 
 ```C
 void dfsR(Graph G, Edge e){
@@ -54,6 +54,39 @@ void dfsR(Graph G, Edge e){
 }
 ```
 
-## Execução
+<p align="center">Função GRAPHSearch para lista de adjacências</p>
+
+```C
+static int count, pre[maxV];
+void GRAPHSearch(Graph G){  
+    int v; 
+    int conexos = 0;
+    count = 0;
+    for(v = 0; G->V; v++)
+        pre[v]=-1;
+    for(v = 0; G->V; v++){ 
+        if(pre[v] == -1){ 
+            dsfRM(G, EDGE(v, v)); // Única mudança para o GRAPHSearch antigo. É chamar a dsfRM, ou seja a dsf da matriz de adjacência
+            conexos++;
+        }
+    }
+}
+```
+
+<p align="center">dfsRM para matriz de ajacência</p>
+
+```C
+void dfsRM(Graph G, Edge e) {
+    int w = e.w;
+    pre[w] = count++;
+    for (int t = 0; t < G->V; t++) {
+        if (G->adj[w][t] == 1 && pre[t] == -1) {
+            dfsR(G, EDGE(w, t));
+        }
+    }
+}
+```
+
+### Execução manual
 
 

@@ -24,3 +24,5 @@ void bfs(Graph G, Edge e){
     }
 }
 ```
+
+### Execução manual

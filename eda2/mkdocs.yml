@@ -7,7 +7,9 @@ nav:
     - Aula 3: Prova_2/Grafos_3.md
     - Aula 4: Prova_2/Grafos_4.md
     - Aula 5: Prova_2/Grafos_5.md
-
+  - Prova 3:
+    - Aula 6: Prova_3/Grafos_6.md
+    - Aula 7: Prova_3/Grafos_7.md
 theme:
   name: material
   features:

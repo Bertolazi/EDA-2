@@ -127,4 +127,22 @@ void GRAPHtc(GRAPH G){
 }
 ```
 
-<p align="center"></p>
+<p align="center">A chamada dessa função, então:</p>
+
+```C
+int GRAPHreach(Graph G, int s, int t){
+    return G->tc[s][t];
+}
+```
+
+Nesse caso é melhor utilizar a matriz de adjacências, já que esse grafo agora vai possuir muitas arestas, ou seja, a economia de memória que a gente ia ter com a nossa lista de adjacências, já não é mais tão vantajosa em relação a matriz de adjacências, e pior a nossa pergunta se nosso vértice s, tem conexão com com t ia ter custo **O(V)**, porque teria que percorrer todos os vértices, com quem o vértice s tem conexão, mas o t pode não estar, então precisamos de v-1, para encontrar, já com matriz de adjacências a consulta para isso tem custo **O(1)**.
+
+<br>
+
+O custo desse algoritmo é **n³**, tornando ele bem caro para os algoritmos que vemos na matéria.
+
+#### Resumo dos algoritmos
+
+A função GRAPHtc é responsável por preparar a estrutura de dados (G->tc), e a função GRAPHreach é usada para consultar rapidamente essa estrutura, respondendo se um vértice alcança outro no grafo. Essa separação é comum em algoritmos que fazem um pré-processamento caro, mas permitem consultas rápidas depois.
+
+### Execução manual
