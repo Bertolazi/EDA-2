@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../../Prova_2/Grafos_5/">
+        <link rel="prev" href="../Arvore_geradora_4/">
       
-      
-        <link rel="next" href="../Grafos_7/">
       
       
       <link rel="icon" href="../../None">
@@ -20,7 +18,7 @@
     
     
       
-        <title>Aula 6 - Estrutura de dados 2</title>
+        <title>Aula 12 - Estrutura de dados 2</title>
       
     
     
@@ -72,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#grafos" class="md-skip">
+        <a href="#estrutura-union-find-disjoint-set-union-dsu" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -108,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Aula 6
+              Aula 12
             
           </span>
         </div>
@@ -246,7 +244,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../Grafos_6/" class="md-tabs__link">
           
   
   
@@ -532,32 +530,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Aula 6
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Grafos_6/" class="md-nav__link">
         
   
   
@@ -568,68 +544,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Índice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#peso-nas-arestas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Peso nas arestas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bellmon-ford" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bellmon Ford
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Bellmon Ford">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#execucao-manual" class="md-nav__link">
-    <span class="md-ellipsis">
-      Execução manual
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resumo-chatgpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resumo ChatGPT
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -754,10 +668,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Arvore_geradora_5/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Aula 12
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -768,6 +704,128 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Objetivo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-representacao-interna" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Representação Interna
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Representação Interna">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vetores-usados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vetores usados:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-operacoes-basicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Operações Básicas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Operações Básicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inicializacao-ufinitn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inicialização: UFinit(n)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#busca-uffindv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Busca: UFfind(v)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uniao-ufunionvw" class="md-nav__link">
+    <span class="md-ellipsis">
+      União: UFunion(v,w)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-heuristicas-de-otimizacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Heurísticas de Otimização
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-complexidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Complexidade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-aplicacoes-classicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Aplicações Clássicas
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -807,28 +865,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#peso-nas-arestas" class="md-nav__link">
+  <a href="#1-objetivo" class="md-nav__link">
     <span class="md-ellipsis">
-      Peso nas arestas
+      1. Objetivo
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bellmon-ford" class="md-nav__link">
+  <a href="#2-representacao-interna" class="md-nav__link">
     <span class="md-ellipsis">
-      Bellmon Ford
+      2. Representação Interna
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Bellmon Ford">
+    <nav class="md-nav" aria-label="2. Representação Interna">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#execucao-manual" class="md-nav__link">
+  <a href="#vetores-usados" class="md-nav__link">
     <span class="md-ellipsis">
-      Execução manual
+      Vetores usados:
     </span>
   </a>
   
@@ -840,9 +898,69 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#resumo-chatgpt" class="md-nav__link">
+  <a href="#3-operacoes-basicas" class="md-nav__link">
     <span class="md-ellipsis">
-      Resumo ChatGPT
+      3. Operações Básicas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Operações Básicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inicializacao-ufinitn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inicialização: UFinit(n)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#busca-uffindv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Busca: UFfind(v)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uniao-ufunionvw" class="md-nav__link">
+    <span class="md-ellipsis">
+      União: UFunion(v,w)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-heuristicas-de-otimizacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Heurísticas de Otimização
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-complexidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Complexidade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-aplicacoes-classicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Aplicações Clássicas
     </span>
   </a>
   
@@ -864,151 +982,82 @@
 
 
 
-<h1 id="grafos">Grafos</h1>
-<h2 id="peso-nas-arestas">Peso nas arestas</h2>
-<p>imagine um grafo onde um vértice é o Plano Piloto e ele está conectado a outro vértice que vamos chamar de Taguatinga, e imagine que a aresta é EPIA e possui 40 km, ou seja, estamos dadno um peso para a aresta que compõe esse grafo. Agora imagine outro vértice que é o Núcleo Bandeirante, do Plano Piloto para o Núcleo Bandeirante temos uma aresta de 30 km e de Taguuatinga para o Núcleo Bandeirante temos uma aresta de 20 km. Olhando o grafo abaixo percebemos de forma intuitiva o seguinte: Se eu quiser ir do Plano Piloto para o Núcleo Bandeirante eu não vou querer ir para Taguatinga antes, vamos ver que gastaríamos 60 km ao invés dos 30 km na conexão direta.</p>
-<div style="text-align: center;">
-    <p>Grafo 9: Exemplo Grafo Brasília</p>
-    <img src="../../assets/grafos/grafo_peso_arestas.png" alt="Grafo 7">
-    <p>Fonte - Autoral</p>
-</div>
-
+<h1 id="estrutura-union-find-disjoint-set-union-dsu">Estrutura Union-Find (Disjoint Set Union - DSU)</h1>
+<h2 id="1-objetivo">1. Objetivo</h2>
+<p>A estrutura <strong>union-find</strong> serve para <strong>representar conjuntos disjuntos</strong> de forma eficiente, com suporte para as operações:</p>
 <ul>
-<li>Como implementar peso nas arestas?<ul>
-<li>Matriz de adjacências: Antes nos grafos, das matrizes de ajjacências, marcávamos com valor binário a conexão dos vértices, ou seja, ao invés de colocar um, dentro da matriz de adjacência já colocamos o peso na matriz.</li>
-<li>Lista de adjacência: Na nossa struct node {int v; link next;}; Responsável pelas arestas, agora nós adicionamos um inteiro para ser o peso das nossas arestas, ficaria algo como:</li>
+<li><code>find(v)</code>: identificar a qual conjunto pertence o elemento <code>v</code>.</li>
+<li><code>union(v, w)</code>: unir os conjuntos contendo os elementos <code>v</code> e <code>w</code>.</li>
 </ul>
-</li>
-</ul>
-<p align="center">Nova struct das arestas para peso nas arestas</p>
-
-<pre><code class="language-C">struct Edge {int v, int c, link next};
-// int c é o peso da aresta
-</code></pre>
+<hr />
+<h2 id="2-representacao-interna">2. Representação Interna</h2>
+<h3 id="vetores-usados">Vetores usados:</h3>
 <ul>
-<li>Como eu saio de um vértice qualquer e chego em outro com o menor custo? Temos algoritmos para ele como:<ul>
-<li>Bellmon Ford:<ul>
-<li>Calcula o caminho mais curto de um único vértice</li>
+<li><code>id[]</code>: vetor de inteiros, onde <code>id[v]</code> aponta para o "pai" de <code>v</code>. Se <code>v</code> é o representante (raiz) de seu conjunto, então <code>id[v] == v</code>.</li>
+<li><code>sz[]</code>: tamanho da árvore representando cada conjunto (usado para balancear).</li>
 </ul>
-</li>
-<li>Dijkstra:<ul>
-<li>Calcula o caminho mais curto de um único vértice</li>
-</ul>
-</li>
-<li>A*:<ul>
-<li>Ao invés de calcular a origem para todos os destinos ele olha somente o ponto inicial e o final</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>"Calcule as distâncias para todos os vértices que você alcança"</li>
-</ul>
-<p>Vamos implementar nessa aula o Bellmon Ford:</p>
-<h2 id="bellmon-ford">Bellmon Ford</h2>
-<pre><code class="language-C">bool GRAPHcptBF(Graph G, int s, int *pa, int *dist){ // int s = Vértice de origem, int *dist = fala a distância para os vértices que conseguimos alcançar
-    bool onqueue[1000]; // Não queremos inserir o mesmo vértice mais d euma vez na fila
-    for(int v = 0; v &lt; G-&gt;v; v++)
-        pa[v] = -1, dist[v] = INT_MAX, onqueue[v] = false;  // aqui igual o pre da dfs onde vemos se já foi visitado temos o pa, e como não sabemos a distância inicializamos com infinito. Inicializamos todos com -1 pois não visitamos nenhum.
-    pa[s] = s;     
-    dist[s] = 0;
-    Queueint(G-&gt;E);
-    onqueue[s] = true;
-    Queueput(V); // Vértice sentinela
-    int k = 0;
-    while(1){
-        int v = Queueget()
-        if(v &lt; V){
-            for(link a = G-&gt;adj[v]; a != NULL; a = a-&gt;next){
-                if(dist[v] + a-&gt;c &lt; dist[a-&gt;v]){ // Ele vê o menor custo e então
-                    dist[a-&gt;v] = dist[v] + a-&gt;c;
-                    pa[a-&gt;v] = v;
-                    if(onqueue[e-&gt;v]== false){
-                        Queueput(a-&gt;v);
-                        onqueue[e-&gt;v] = true;
-                    }
-                }
-            }
-        }else{
-            if(Queueempty()) 
-                return true;
-            if(++k &gt;= G-&gt;V)
-                return false;
-            Queueput(V)
-            for (int t = 0; t &lt; G-&gt;v; t++)
-                onqueue[t] = false;
-        }
-    }
+<hr />
+<h2 id="3-operacoes-basicas">3. Operações Básicas</h2>
+<h3 id="inicializacao-ufinitn">Inicialização: <code>UFinit(n)</code></h3>
+<pre><code class="language-c">void UFinit(int n) {
+   for (int i = 0; i &lt; n; i++) {
+      id[i] = i;
+      sz[i] = 1;
+   }
 }
 </code></pre>
-<h3 id="execucao-manual">Execução manual</h3>
-<h2 id="resumo-chatgpt">Resumo ChatGPT</h2>
-<p>1 - Grafos com Pesos
-- Em um grafo com pesos, cada aresta pode representar um custo, distância, tempo, etc.
-- Exemplo usado: mapa de regiões do DF com distâncias entre cidades (Plano Piloto, Taguatinga, Núcleo Bandeirante).
-- A escolha do caminho ideal depende do peso total acumulado.</p>
-<p>2 - Representações com Pesos</p>
+<h3 id="busca-uffindv">Busca: <code>UFfind(v)</code></h3>
+<pre><code class="language-c">int UFfind(int v) {
+   while (v != id[v])
+      v = id[v];
+   return v;
+}
+</code></pre>
+<h3 id="uniao-ufunionvw">União: <code>UFunion(v,w)</code></h3>
+<pre><code class="language-c">void UFunion(int v, int w) {
+   int i = UFfind(v);
+   int j = UFfind(w);
+   if (i == j) return;
+
+   if (sz[i] &lt; sz[j]) {
+      id[i] = j;
+      sz[j] += sz[i];
+   } else {
+      id[j] = i;
+      sz[i] += sz[j];
+   }
+}
+</code></pre>
 <ul>
-<li>Matriz de Adjacência:<ul>
-<li>Cada célula armazena o peso da aresta entre dois vértices.</li>
-<li>Se não há aresta, valor padrão pode ser zero ou infinito.</li>
+<li>Une as árvores representando os conjuntos.</li>
+<li>Sempre liga a menor árvore na maior, evitando crescimento desbalanceado.</li>
 </ul>
-</li>
-<li>Lista de Adjacência:<ul>
-<li>Cada nó da lista contém o vértice de destino e o peso da aresta.</li>
-<li>A estrutura pode ser expandida com mais dados, como nome da cidade, estoque, etc.</li>
-</ul>
-</li>
-</ul>
-<p>3 - Aplicações Práticas</p>
+<h2 id="4-heuristicas-de-otimizacao">4. Heurísticas de Otimização</h2>
 <ul>
-<li>Exemplo de logística: uma empresa precisa entregar uma televisão de um galpão ao cliente.<ul>
-<li>Os vértices podem representar galpões logísticos, estoque disponível, e clientes.</li>
-<li>As arestas representam rotas entre os galpões com seus respectivos custos.</li>
+<li>Balanceamento por Tamanho (sz[])<ul>
+<li>Garante que a altura da árvore seja pequena.</li>
+<li>Evita piores casos como listas encadeadas.</li>
+</ul>
+</li>
+<li>Compressão de Caminho (não incluída no código base)<ul>
+<li>Ao fazer find, torna todos os vértices no caminho filhos diretos da raiz.</li>
+<li>Reduz a profundidade e melhora a eficiência futura.</li>
 </ul>
 </li>
 </ul>
-<p>4 - Problema de Caminho Mínimo (Cheapest Path)</p>
+<h2 id="5-complexidade">5. Complexidade</h2>
 <ul>
-<li>Deseja-se encontrar o menor custo para ir de um vértice de origem até um destino.</li>
-<li>Três algoritmos foram destacados:</li>
-<li>Bellman-Ford<ul>
-<li>Funciona com pesos negativos.</li>
-<li>Detecta ciclos negativos (quando é possível reduzir indefinidamente o custo).</li>
-<li>Serve para encontrar o menor caminho a partir de um único vértice para todos os outros.</li>
+<li>Com heurísticas (balanceamento e compressão de caminho), as operações têm complexidade praticamente constante:</li>
+<li>O(α(n))(func¸a˜o inversa de Ackermann)</li>
+<li>O(α(n))(func¸​a˜o inversa de Ackermann)</li>
+<li>Na prática, α(n) &lt; 5 mesmo para valores muito grandes de n.</li>
 </ul>
-</li>
-<li>Dijkstra<ul>
-<li>Funciona somente com pesos positivos ou nulos.</li>
-<li>Mais eficiente que Bellman-Ford em muitos casos.</li>
-<li>Também calcula o caminho mais curto a partir de um único vértice.</li>
-</ul>
-</li>
-<li>A* (A estrela)<ul>
-<li>Usado em jogos e inteligência artificial </li>
-<li>Calcula caminho entre dois vértices específicos.</li>
-<li>Usa uma função heurística para evitar explorar caminhos desnecessários.</li>
-</ul>
-</li>
-</ul>
-<p>5 - Ciclos Negativos</p>
+<h2 id="6-aplicacoes-classicas">6. Aplicações Clássicas</h2>
 <ul>
-<li>Quando existe um caminho fechado com soma total de pesos negativa.</li>
-<li>Bellman-Ford é capaz de detectar esses ciclos e abortar o cálculo.</li>
-<li>Nenhum algoritmo comum é capaz de encontrar o menor caminho corretamente em presença de ciclos negativos.</li>
-</ul>
-<p>6 - Complexidade e Desempenho</p>
-<ul>
-<li>Bellman-Ford tem complexidade maior, mas é mais robusto.</li>
-<li>Dijkstra é mais rápido, mas menos flexível (não funciona com pesos negativos).</li>
-<li>A escolha do algoritmo depende do problema e das características do grafo.</li>
-</ul>
-<p>7 - Importância na Modelagem</p>
-<ul>
-<li>Grafos com pesos são essenciais para:<ul>
-<li>Problemas de logística, rede de transportes, comunicações.</li>
-<li>Otimização de rotas, planejamento de entrega, e análise de conectividade.</li>
-</ul>
-</li>
+<li>Algoritmo de Kruskal para encontrar a MST.</li>
+<li>Detectar ciclos em grafos.</li>
+<li>Gerenciamento de componentes conexas dinâmicas.</li>
+<li>Clustering, sistemas de tipos, agrupamentos de estados.</li>
 </ul>
 
 
@@ -1047,7 +1096,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
         
           
-          <a href="../../Prova_2/Grafos_5/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Aula 5">
+          <a href="../Arvore_geradora_4/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Aula 11">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1057,27 +1106,11 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                Aula 5
+                Aula 11
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../Grafos_7/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Aula 7">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Próximo
-              </span>
-              <div class="md-ellipsis">
-                Aula 7
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
