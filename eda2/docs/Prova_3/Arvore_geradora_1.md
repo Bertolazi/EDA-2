@@ -88,7 +88,7 @@ Existe uma relação direta:
 
 ---
 
-## 📎 Referência
+## Referência
 
 Fonte: [Paulo Feofiloff - IME USP](https://www.ime.usp.br/~pf/algoritmos_para_grafos/aulas/spanningtrees.html)
 
