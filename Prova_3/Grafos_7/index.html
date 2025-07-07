@@ -612,6 +612,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Dijkstra (ingênuo)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#execucao-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execução manual
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumo-chatgpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumo ChatGPT
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -660,6 +684,30 @@
   <a href="#dijkstra-ingenuo" class="md-nav__link">
     <span class="md-ellipsis">
       Dijkstra (ingênuo)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dijkstra (ingênuo)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#execucao-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execução manual
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumo-chatgpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumo ChatGPT
     </span>
   </a>
   
@@ -720,6 +768,35 @@
     }
 }
 </code></pre>
+<h3 id="execucao-manual">Execução manual</h3>
+<h2 id="resumo-chatgpt">Resumo ChatGPT</h2>
+<table>
+<thead>
+<tr>
+<th>Algoritmo</th>
+<th>Aceita Pesos Negativos</th>
+<th>Detecta Ciclos Negativos</th>
+<th>Complexidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bellman-Ford</td>
+<td>✅ Sim</td>
+<td>✅ Sim</td>
+<td>O(V × E)</td>
+</tr>
+<tr>
+<td>Dijkstra</td>
+<td>❌ Não</td>
+<td>❌ Não</td>
+<td>O((V + E) log V)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Para grafos somente com pesos positivos Drijkstra é melhor.</li>
+</ul>
 
 
 
