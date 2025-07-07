@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../None">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
@@ -231,6 +231,26 @@
   
   
   Prova 2
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Prova_3/Grafos_6/" class="md-tabs__link">
+          
+  
+  
+  Prova 3
 
         </a>
       </li>
@@ -463,14 +483,20 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execucao" class="md-nav__link">
+    <nav class="md-nav" aria-label="Componentes conexas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#execucao-manual" class="md-nav__link">
     <span class="md-ellipsis">
-      Execução
+      Execução manual
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -536,6 +562,100 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prova 3
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Prova 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Prova_3/Grafos_6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Prova_3/Grafos_7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 7
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -578,14 +698,20 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execucao" class="md-nav__link">
+    <nav class="md-nav" aria-label="Componentes conexas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#execucao-manual" class="md-nav__link">
     <span class="md-ellipsis">
-      Execução
+      Execução manual
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -625,7 +751,7 @@
 
 <p>Como podemos ver no grafo acima temos duas componentes conexas: Todo grupo unido com o 0 de um lado, e do outro o 9 junto do 8. Como podemos fazer isso? Bom mas antes de fazer isso vamos fazer uma função genérica para fazer uma busca geral no gráfico, contando quantos vértices eu visitei</p>
 
-<p align="center">Função GRAPHSearch para matriz de adjacências</p>
+<p align="center">Função GRAPHSearch para lista de adjacências</p>
 
 <pre><code class="language-C">static int count, pre[maxV];
 void GRAPHSearch(Graph G){  // Com esse algoritmo o sistema computa a saída da componente conexa e vai para a próxima
@@ -642,7 +768,7 @@ void GRAPHSearch(Graph G){  // Com esse algoritmo o sistema computa a saída da 
     }
 }
 </code></pre>
-<p align="center">Função GRAPHSearch para lista de adjacências</p>
+<p align="center">dfsR para lista de ajacência</p>
 
 <pre><code class="language-C">void dfsR(Graph G, Edge e){
     int t, w = e.w;
@@ -655,9 +781,36 @@ void GRAPHSearch(Graph G){  // Com esse algoritmo o sistema computa a saída da 
     }
 }
 </code></pre>
-<h2 id="execucao">Execução</h2>
-<p>Feita no caderno.
-Fazer novamente para a prova 3.</p>
+<p align="center">Função GRAPHSearch para lista de adjacências</p>
+
+<pre><code class="language-C">static int count, pre[maxV];
+void GRAPHSearch(Graph G){  
+    int v; 
+    int conexos = 0;
+    count = 0;
+    for(v = 0; G-&gt;V; v++)
+        pre[v]=-1;
+    for(v = 0; G-&gt;V; v++){ 
+        if(pre[v] == -1){ 
+            dsfRM(G, EDGE(v, v)); // Única mudança para o GRAPHSearch antigo. É chamar a dsfRM, ou seja a dsf da matriz de adjacência
+            conexos++;
+        }
+    }
+}
+</code></pre>
+<p align="center">dfsRM para matriz de ajacência</p>
+
+<pre><code class="language-C">void dfsRM(Graph G, Edge e) {
+    int w = e.w;
+    pre[w] = count++;
+    for (int t = 0; t &lt; G-&gt;V; t++) {
+        if (G-&gt;adj[w][t] == 1 &amp;&amp; pre[t] == -1) {
+            dfsR(G, EDGE(w, t));
+        }
+    }
+}
+</code></pre>
+<h3 id="execucao-manual">Execução manual</h3>
 
 
 
@@ -757,7 +910,7 @@ Fazer novamente para a prova 3.</p>
       <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
     
   </body>
