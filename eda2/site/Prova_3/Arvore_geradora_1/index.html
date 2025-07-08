@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../Prova_2/Grafos_5/">
+        <link rel="prev" href="../Grafos_7/">
       
       
-        <link rel="next" href="../Grafos_7/">
+        <link rel="next" href="../Arvore_geradora_2/">
       
       
       <link rel="icon" href="../../None">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Aula 6 - Estrutura de dados 2</title>
+        <title>Aula 8 - Estrutura de dados 2</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#grafos" class="md-skip">
+        <a href="#arvore-geradora" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Aula 6
+              Aula 8
             
           </span>
         </div>
@@ -246,7 +246,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../Grafos_6/" class="md-tabs__link">
           
   
   
@@ -532,32 +532,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Aula 6
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Grafos_6/" class="md-nav__link">
         
   
   
@@ -568,68 +546,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Índice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#peso-nas-arestas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Peso nas arestas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bellmon-ford" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bellmon Ford
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Bellmon Ford">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#execucao-manual" class="md-nav__link">
-    <span class="md-ellipsis">
-      Execução manual
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resumo-chatgpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resumo ChatGPT
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -662,10 +578,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Arvore_geradora_1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Aula 8
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -676,6 +614,137 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-definicao-de-arvore-geradora" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Definição de Árvore Geradora
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-como-obter-uma-arvore-geradora" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Como Obter uma Árvore Geradora
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cortes-em-grafos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Cortes em Grafos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Cortes em Grafos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-propriedades-de-substituicao-de-arestas" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Propriedades de Substituição de Arestas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Propriedades de Substituição de Arestas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#propriedade-dos-circuitos-insereremove" class="md-nav__link">
+    <span class="md-ellipsis">
+      Propriedade dos Circuitos (Insere–Remove)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propriedade-dos-cortes-removeinsere" class="md-nav__link">
+    <span class="md-ellipsis">
+      Propriedade dos Cortes (Remove–Insere)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#circuitos-vs-cortes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Circuitos vs. Cortes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-exercicios-propostos-do-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Exercícios Propostos (do site)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceitos-resumidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceitos Resumidos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referência
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -807,28 +876,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#peso-nas-arestas" class="md-nav__link">
+  <a href="#1-definicao-de-arvore-geradora" class="md-nav__link">
     <span class="md-ellipsis">
-      Peso nas arestas
+      1. Definição de Árvore Geradora
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bellmon-ford" class="md-nav__link">
+  <a href="#2-como-obter-uma-arvore-geradora" class="md-nav__link">
     <span class="md-ellipsis">
-      Bellmon Ford
+      2. Como Obter uma Árvore Geradora
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Bellmon Ford">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cortes-em-grafos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Cortes em Grafos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Cortes em Grafos">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#execucao-manual" class="md-nav__link">
+  <a href="#exemplo" class="md-nav__link">
     <span class="md-ellipsis">
-      Execução manual
+      Exemplo:
     </span>
   </a>
   
@@ -840,9 +918,69 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#resumo-chatgpt" class="md-nav__link">
+  <a href="#4-propriedades-de-substituicao-de-arestas" class="md-nav__link">
     <span class="md-ellipsis">
-      Resumo ChatGPT
+      4. Propriedades de Substituição de Arestas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Propriedades de Substituição de Arestas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#propriedade-dos-circuitos-insereremove" class="md-nav__link">
+    <span class="md-ellipsis">
+      Propriedade dos Circuitos (Insere–Remove)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propriedade-dos-cortes-removeinsere" class="md-nav__link">
+    <span class="md-ellipsis">
+      Propriedade dos Cortes (Remove–Insere)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#circuitos-vs-cortes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Circuitos vs. Cortes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-exercicios-propostos-do-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Exercícios Propostos (do site)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceitos-resumidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceitos Resumidos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referência
     </span>
   </a>
   
@@ -864,152 +1002,104 @@
 
 
 
-<h1 id="grafos">Grafos</h1>
-<h2 id="peso-nas-arestas">Peso nas arestas</h2>
-<p>imagine um grafo onde um vértice é o Plano Piloto e ele está conectado a outro vértice que vamos chamar de Taguatinga, e imagine que a aresta é EPIA e possui 40 km, ou seja, estamos dadno um peso para a aresta que compõe esse grafo. Agora imagine outro vértice que é o Núcleo Bandeirante, do Plano Piloto para o Núcleo Bandeirante temos uma aresta de 30 km e de Taguuatinga para o Núcleo Bandeirante temos uma aresta de 20 km. Olhando o grafo abaixo percebemos de forma intuitiva o seguinte: Se eu quiser ir do Plano Piloto para o Núcleo Bandeirante eu não vou querer ir para Taguatinga antes, vamos ver que gastaríamos 60 km ao invés dos 30 km na conexão direta.</p>
-<div style="text-align: center;">
-    <p>Grafo 9: Exemplo Grafo Brasília</p>
-    <img src="../../assets/grafos/grafo_peso_arestas.png" alt="Grafo 7">
-    <p>Fonte - Autoral</p>
-</div>
-
+<h1 id="arvore-geradora">Árvore geradora</h1>
+<h2 id="1-definicao-de-arvore-geradora">1. Definição de Árvore Geradora</h2>
+<p>Uma <strong>árvore geradora</strong> (<em>spanning tree</em>) de um grafo <strong>não-dirigido e conexo</strong> é um subgrafo que:</p>
 <ul>
-<li>Como implementar peso nas arestas?<ul>
-<li>Matriz de adjacências: Antes nos grafos, das matrizes de ajjacências, marcávamos com valor binário a conexão dos vértices, ou seja, ao invés de colocar um, dentro da matriz de adjacência já colocamos o peso na matriz.</li>
-<li>Lista de adjacência: Na nossa struct node {int v; link next;}; Responsável pelas arestas, agora nós adicionamos um inteiro para ser o peso das nossas arestas, ficaria algo como:</li>
+<li>Inclui <strong>todos os vértices</strong> do grafo original.</li>
+<li>É <strong>conexo</strong> e <strong>sem ciclos</strong> (ou seja, uma árvore).</li>
+<li>Possui exatamente <strong>V - 1 arestas</strong>, onde <em>V</em> é o número de vértices.</li>
 </ul>
-</li>
-</ul>
-<p align="center">Nova struct das arestas para peso nas arestas</p>
-
-<pre><code class="language-C">struct Edge {int v, int c, link next};
-// int c é o peso da aresta
-</code></pre>
+<blockquote>
+<p>Todo grafo não-dirigido e conexo possui pelo menos uma árvore geradora.</p>
+</blockquote>
+<hr />
+<h2 id="2-como-obter-uma-arvore-geradora">2. Como Obter uma Árvore Geradora</h2>
 <ul>
-<li>Como eu saio de um vértice qualquer e chego em outro com o menor custo? Temos algoritmos para ele como:<ul>
-<li>Bellmon Ford:<ul>
-<li>Calcula o caminho mais curto de um único vértice</li>
+<li>Tanto a <strong>busca em profundidade (DFS)</strong> quanto a <strong>busca em largura (BFS)</strong> podem gerar uma árvore geradora.</li>
+<li>Ambas constroem uma <strong>árvore radicada</strong>, conectando todos os vértices acessíveis a partir de um vértice inicial.</li>
+<li>As arestas exploradas formam uma árvore geradora.</li>
 </ul>
-</li>
-<li>Dijkstra:<ul>
-<li>Calcula o caminho mais curto de um único vértice</li>
-</ul>
-</li>
-<li>A*:<ul>
-<li>Ao invés de calcular a origem para todos os destinos ele olha somente o ponto inicial e o final</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>"Calcule as distâncias para todos os vértices que você alcança"</li>
-</ul>
-<p>Vamos implementar nessa aula o Bellmon Ford:</p>
-<h2 id="bellmon-ford">Bellmon Ford</h2>
-<pre><code class="language-C">bool GRAPHcptBF(Graph G, int s, int *pa, int *dist){ // int s = Vértice de origem, int *dist = fala a distância para os vértices que conseguimos alcançar
-    bool onqueue[1000]; // Não queremos inserir o mesmo vértice mais d euma vez na fila
-    for(int v = 0; v &lt; G-&gt;v; v++)
-        pa[v] = -1, dist[v] = INT_MAX, onqueue[v] = false;  // aqui igual o pre da dfs onde vemos se já foi visitado temos o pa, e como não sabemos a distância inicializamos com infinito. Inicializamos todos com -1 pois não visitamos nenhum.
-    pa[s] = s;     
-    dist[s] = 0;
-    Queueint(G-&gt;E);
-    onqueue[s] = true;
-    Queueput(V); // Vértice sentinela
-    int k = 0;
-    while(1){
-        int v = Queueget()
-        if(v &lt; V){
-            for(link a = G-&gt;adj[v]; a != NULL; a = a-&gt;next){
-                if(dist[v] + a-&gt;c &lt; dist[a-&gt;v]){ // Ele vê o menor custo e então
-                    dist[a-&gt;v] = dist[v] + a-&gt;c;
-                    pa[a-&gt;v] = v;
-                    if(onqueue[e-&gt;v]== false){
-                        Queueput(a-&gt;v);
-                        onqueue[e-&gt;v] = true;
-                    }
-                }
-            }
-        }else{
-            if(Queueempty()) 
-                return true;
-            if(++k &gt;= G-&gt;V)
-                return false;
-            Queueput(V)
-            for (int t = 0; t &lt; G-&gt;v; t++)
-                onqueue[t] = false;
-        }
-    }
-}
-</code></pre>
-<h3 id="execucao-manual">Execução manual</h3>
-<h2 id="resumo-chatgpt">Resumo ChatGPT</h2>
-<p>1 - Grafos com Pesos
-- Em um grafo com pesos, cada aresta pode representar um custo, distância, tempo, etc.
-- Exemplo usado: mapa de regiões do DF com distâncias entre cidades (Plano Piloto, Taguatinga, Núcleo Bandeirante).
-- A escolha do caminho ideal depende do peso total acumulado.</p>
-<p>2 - Representações com Pesos</p>
+<hr />
+<h2 id="3-cortes-em-grafos">3. Cortes em Grafos</h2>
 <ul>
-<li>Matriz de Adjacência:<ul>
-<li>Cada célula armazena o peso da aresta entre dois vértices.</li>
-<li>Se não há aresta, valor padrão pode ser zero ou infinito.</li>
+<li>Um <strong>corte</strong> é o conjunto de arestas que conecta um subconjunto de vértices ( X ) ao seu complemento ( \overline{X} ).</li>
+<li>O <strong>leque</strong> de ( X ) é esse conjunto de arestas.</li>
+<li>Se o corte é vazio, o grafo é <strong>desconexo</strong>.</li>
 </ul>
-</li>
-<li>Lista de Adjacência:<ul>
-<li>Cada nó da lista contém o vértice de destino e o peso da aresta.</li>
-<li>A estrutura pode ser expandida com mais dados, como nome da cidade, estoque, etc.</li>
-</ul>
-</li>
-</ul>
-<p>3 - Aplicações Práticas</p>
+<h3 id="exemplo">Exemplo:</h3>
+<p>Para o grafo com arestas = 0-1, 0-2, 2-1, 3-5, 4-5:</p>
+<p>O corte entre <code>{0}</code> e <code>{1,2,3,4,5}</code> é <code>{0-1, 0-2}</code>.</p>
+<hr />
+<h2 id="4-propriedades-de-substituicao-de-arestas">4. Propriedades de Substituição de Arestas</h2>
+<p>Essas propriedades são fundamentais para os algoritmos de MST (árvore geradora mínima).</p>
+<h3 id="propriedade-dos-circuitos-insereremove">Propriedade dos Circuitos (Insere–Remove)</h3>
+<p>Seja ( T ) uma árvore geradora e ( e \notin T ). Então:</p>
 <ul>
-<li>Exemplo de logística: uma empresa precisa entregar uma televisão de um galpão ao cliente.<ul>
-<li>Os vértices podem representar galpões logísticos, estoque disponível, e clientes.</li>
-<li>As arestas representam rotas entre os galpões com seus respectivos custos.</li>
+<li>O grafo ( T + e ) contém <strong>um único circuito</strong>.</li>
+<li>Remover qualquer aresta ( t ) desse circuito produz outra árvore geradora:  T + e - t → também é uma árvore geradora</li>
 </ul>
-</li>
-</ul>
-<p>4 - Problema de Caminho Mínimo (Cheapest Path)</p>
+<blockquote>
+<p>Esse circuito é chamado <strong>circuito fundamental de e</strong> em relação a T.</p>
+</blockquote>
+<hr />
+<h3 id="propriedade-dos-cortes-removeinsere">Propriedade dos Cortes (Remove–Insere)</h3>
+<p>Seja ( t \in T ). A remoção de ( t ) decompõe ( T ) em duas componentes conexas.</p>
 <ul>
-<li>Deseja-se encontrar o menor custo para ir de um vértice de origem até um destino.</li>
-<li>Três algoritmos foram destacados:</li>
-<li>Bellman-Ford<ul>
-<li>Funciona com pesos negativos.</li>
-<li>Detecta ciclos negativos (quando é possível reduzir indefinidamente o custo).</li>
-<li>Serve para encontrar o menor caminho a partir de um único vértice para todos os outros.</li>
+<li>O <strong>corte fundamental de t</strong> é o conjunto de arestas que conecta essas duas partes.</li>
+<li>Para qualquer ( e ) nesse corte: T - t + e → também é uma árvore geradora</li>
 </ul>
-</li>
-<li>Dijkstra<ul>
-<li>Funciona somente com pesos positivos ou nulos.</li>
-<li>Mais eficiente que Bellman-Ford em muitos casos.</li>
-<li>Também calcula o caminho mais curto a partir de um único vértice.</li>
-</ul>
-</li>
-<li>A* (A estrela)<ul>
-<li>Usado em jogos e inteligência artificial </li>
-<li>Calcula caminho entre dois vértices específicos.</li>
-<li>Usa uma função heurística para evitar explorar caminhos desnecessários.</li>
-</ul>
-</li>
-</ul>
-<p>5 - Ciclos Negativos</p>
+<hr />
+<h2 id="circuitos-vs-cortes">Circuitos vs. Cortes</h2>
+<p>Existe uma relação direta:</p>
+<blockquote>
+<p><strong>t está no circuito fundamental de e</strong><br />
+<strong>⟺</strong><br />
+<strong>e está no corte fundamental de t</strong></p>
+</blockquote>
+<hr />
+<h2 id="5-exercicios-propostos-do-site">5. Exercícios Propostos (do site)</h2>
 <ul>
-<li>Quando existe um caminho fechado com soma total de pesos negativa.</li>
-<li>Bellman-Ford é capaz de detectar esses ciclos e abortar o cálculo.</li>
-<li>Nenhum algoritmo comum é capaz de encontrar o menor caminho corretamente em presença de ciclos negativos.</li>
+<li>Encontrar árvores geradoras a partir de conjuntos de arestas.</li>
+<li>Usar DFS e BFS para gerar árvores.</li>
+<li>Calcular cortes e circuitos fundamentais.</li>
+<li>Implementar <code>CheckMST()</code> para verificar se um vetor de pais representa uma árvore geradora.</li>
 </ul>
-<p>6 - Complexidade e Desempenho</p>
-<ul>
-<li>Bellman-Ford tem complexidade maior, mas é mais robusto.</li>
-<li>Dijkstra é mais rápido, mas menos flexível (não funciona com pesos negativos).</li>
-<li>A escolha do algoritmo depende do problema e das características do grafo.</li>
-</ul>
-<p>7 - Importância na Modelagem</p>
-<ul>
-<li>Grafos com pesos são essenciais para:<ul>
-<li>Problemas de logística, rede de transportes, comunicações.</li>
-<li>Otimização de rotas, planejamento de entrega, e análise de conectividade.</li>
-</ul>
-</li>
-</ul>
+<hr />
+<h2 id="conceitos-resumidos">Conceitos Resumidos</h2>
+<table>
+<thead>
+<tr>
+<th>Conceito</th>
+<th>Definição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Árvore Geradora</td>
+<td>Subgrafo conexo, sem ciclos, com V-1 arestas</td>
+</tr>
+<tr>
+<td>Leque de X</td>
+<td>Arestas entre X e seu complemento ( \overline{X} )</td>
+</tr>
+<tr>
+<td>Corte</td>
+<td>Leque de um subconjunto não-trivial de vértices</td>
+</tr>
+<tr>
+<td>Circuito Fundamental</td>
+<td>Único circuito criado ao adicionar uma aresta a uma árvore geradora</td>
+</tr>
+<tr>
+<td>Corte Fundamental</td>
+<td>Conjunto de arestas conectando as partes após remover aresta de T</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="referencia">Referência</h2>
+<p>Fonte: <a href="https://www.ime.usp.br/~pf/algoritmos_para_grafos/aulas/spanningtrees.html">Paulo Feofiloff - IME USP</a></p>
 
 
 
@@ -1047,7 +1137,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
         
           
-          <a href="../../Prova_2/Grafos_5/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Aula 5">
+          <a href="../Grafos_7/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Aula 7">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1057,20 +1147,20 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                Aula 5
+                Aula 7
               </div>
             </div>
           </a>
         
         
           
-          <a href="../Grafos_7/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Aula 7">
+          <a href="../Arvore_geradora_2/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Aula 9">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Próximo
               </span>
               <div class="md-ellipsis">
-                Aula 7
+                Aula 9
               </div>
             </div>
             <div class="md-footer__button md-icon">
