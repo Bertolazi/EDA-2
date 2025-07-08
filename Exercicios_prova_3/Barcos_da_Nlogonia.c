@@ -35,7 +35,10 @@ Restrições
 
 typedef struct graph *Graph;
 typedef struct node *link;
-typedef struct {int v; int w; link next}Edge;
+typedef struct {int v; int w; int peso}Edge;
+
+int sz[];
+int id[];
 
 struct graph{
     int V; // numero de vértices
@@ -67,6 +70,21 @@ void GRAPHInsert(Graph G, int v, int w, int peso){
         G->E++;
     G->adj[v][w] == peso;
     G->adj[w][v] == peso;
+}
+
+int UFfind(int v){
+    while (v != id[v])
+        return v; 
+}
+
+void UFunion(int v, int w){
+    int i = UFfind(v), j = UFfind(w);
+    if(i == j)
+        return;
+    if(sz[i] < sz[j]){
+        id
+    }
+    
 }
 
 int main(){
